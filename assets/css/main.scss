@@ -56,7 +56,7 @@
     text-align: center;
     background-repeat: no-repeat;
     &.on{
-      @include t-form(scale(4));
+      @include t-form(scale(5));
       z-index: 1000;
       a{
         opacity: 0;
