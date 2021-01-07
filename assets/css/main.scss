@@ -1,0 +1,230 @@
+@import "_mixin", "_var", "_function";
+
+#main-cnt {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: $pink;
+  overflow: hidden;
+
+  .talk {
+    @include t-form(translate(-50%, -50%));
+    @include borderbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: vw-calc(688);
+    height: auto;
+    padding: vw-calc(160) vw-calc(120);
+    background: url("../images/project/c-white.svg") no-repeat center;
+    background-size: contain;
+    z-index: 10;
+
+    p:first-of-type {
+      font-size: vw-calc(80);
+      line-height: 2;
+      text-align: left;
+    }
+
+    p:nth-of-type(2) {
+      font-size: vw-calc(40);
+      line-height: vw-calc(60);
+      text-align: right;
+
+      span {
+        color: #447844;
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -10;
+    }
+  }
+
+  .link {
+    @include borderbox;
+    @include bg-size(contain);
+    @include t-sition(all 1s);
+    position: absolute;
+    padding: 100px;
+    text-align: center;
+    background-repeat: no-repeat;
+    &.on{
+      @include t-form(scale(4));
+      z-index: 1000;
+      a{
+        opacity: 0;
+      }
+    }
+
+    a {
+      @include t-sition(all 0.3s);
+      display: inline-block;
+      font-size: vw-calc(50);
+      line-height: vw-calc(910);
+    }
+  }
+
+  .link-intro {
+    top: -30%;
+    left: -10%;
+    width: vw-calc(1008);
+    height: vw-calc(1036);
+    background-image: url("../images/main/island-i.svg");
+  }
+
+  .link-project {
+    right: -10%;
+    bottom: -30%;
+    width: vw-calc(951);
+    height: vw-calc(957);
+    background-image: url("../images/main/island-p.svg");
+  }
+
+  .mysite {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+    li {
+      float: left;
+      margin: 0 10px;
+
+      a {
+        display: inline-block;
+        text-align: center;
+
+        img {
+          width: 24px;
+        }
+
+        span {
+          font-family: LuxM;
+          font-weight: 600;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+/* .change-site{
+  transform: scale(100, 100);
+  z-index: 1000;
+} 왜 안먹히는 것인가.. */
+
+/* 자기소개 페이지 */
+.b-pink{
+  background: $b-pink;
+}
+#aboutme {
+  @include t-sition(all 0.5s);
+  position: relative;
+  top: 100px;
+  padding-top: 100px;
+  opacity: 0;
+  &.active{
+    top: 0;
+    opacity: 1;
+  }
+
+  .bottom-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  h2 {
+    margin-left: 120px;
+    font-size: 50px;
+    /* font-weight: 400; */
+  }
+
+  .my_feature {
+    position: relative;
+    width: 100%;
+    font-size: 40px;
+    line-height: 68px;
+
+    p {
+      @include t-form(translateY(-50%));
+      position: absolute;
+      top: 50%;
+    }
+
+    .me {
+      width: 680px;
+      height: 680px;
+      background: no-repeat center / contain;
+    }
+  }
+
+  .think {
+    >* {
+      float: right;
+    }
+
+    .me {
+      background-image: url("../images/main/magic.png");
+    }
+  }
+
+  .happy {
+    >* {
+      float: left;
+    }
+
+    p {
+      right: 0;
+    }
+
+    .me {
+      background-image: url("../images/main/making.png");
+    }
+  }
+
+  .ability {
+    >* {
+      float: left;
+    }
+
+    p {
+      position: static;
+      margin-top: 700px;
+    }
+
+    .me {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url("../images/main/flying.png");
+    }
+  }
+
+  .ability_list {
+    strong {
+      font-family: LuxM;
+      font-size: 40px;
+      color: #333;
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 36px;
+      color: #fff;
+    }
+    .orange-o, .black-o{
+      width: 328px;
+      height: 328px;
+    }
+  }
+
+}
