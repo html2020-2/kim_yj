@@ -1,9 +1,14 @@
 $(document).ready(function () {
-  $('#intro a').on('click', function (e) {
+  $('.link a').on('click', function (e) {
     e.preventDefault();
+    var $tg = $(this);
     $(this).parent().addClass('on');
     setTimeout(function () {
-      location.href = './introduce/me.html';
+      if ($tg.parent().is('#intro')) {
+        location.href = './introduce/me.html';
+      } else {
+        location.href = './project/project.html';
+      }
     }, 1000);
-  })
+  });
 });
