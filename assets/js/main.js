@@ -1,13 +1,13 @@
 $(document).ready(function () {
-  $('.link a').on('click', function (e) {
+  $('#main-cnt .link a').on('click', function (e) {
+    var $onA = $(this);
     e.preventDefault();
-    var $tg = $(this);
-    $(this).parent().addClass('on');
+    $onA.parent().addClass('bigger');
     setTimeout(function () {
-      if ($tg.parent().is('#intro')) {
-        location.href = './introduce/me.html';
+      if ($onA.parent().is('#intro')) {
+        location.href = 'introduce/me.html';
       } else {
-        location.href = './project/project.html';
+        location.href = 'project/project.html';
       }
     }, 1000);
   });
